@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Russia", "Spain", "UK", "US"].shuffled()
+    @State private var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Russia", "Spain", "UK", "USA"].shuffled()
     @State private var correctAnswer = Int.random(in: 0...2)
 
     @State private var showingScore = false
@@ -29,12 +29,13 @@ struct ContentView: View {
                 VStack {
                     Text("Tap the flag of")
                         .foregroundColor(.white)
+                        .fixedSize()
 
                     Text(countries[correctAnswer])
                         .foregroundColor(.white)
                         .font(.largeTitle)
                         .fontWeight(.black)
-                }
+                }.fixedSize()
 
                 ForEach(0 ..< 3) { number in
                     Button(action: {
